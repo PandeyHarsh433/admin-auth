@@ -6,6 +6,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+import Link from 'next/link'
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email address").required("Required!"),
@@ -84,7 +85,7 @@ const SignIn = () => {
                   ) : null}
                 </div>
                 <div className="forget">
-                  <Link href="#" style={{ textDecoration: "none" }}>
+                  <Link href="https://admin-auth-omega.vercel.app/register" style={{ textDecoration: "none" }}>
                     Forget Password?
                   </Link>
                 </div>
