@@ -23,7 +23,7 @@ const Dashboard = () => {
     return (
       <>
         <div>Please log in to access this page</div>
-        <Link href="http://localhost:3000">Go to login Page</Link>
+        <Link href="https://admin-auth-omega.vercel.app/">Go to login Page</Link>
       </>
     );
   }
