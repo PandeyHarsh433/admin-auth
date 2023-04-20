@@ -83,8 +83,11 @@ const SignIn = () => {
                     </div>
                   ) : null}
                 </div>
-                 <div className="forget">
-                  <Link href="https://admin-auth-omega.vercel.app/register/" style={{ textDecoration: "none" }}>
+                <div className="forget">
+                  <Link
+                    href="https://admin-auth-omega.vercel.app/register"
+                    style={{ textDecoration: "none" }}
+                  >
                     Forget Password?
                   </Link>
                 </div>
