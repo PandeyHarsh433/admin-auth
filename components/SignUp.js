@@ -3,8 +3,19 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import GoogleIcon from "@mui/icons-material/Google";
 import AppleIcon from "@mui/icons-material/Apple";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router";
 
 const RegisterForm = () => {
+
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  if (session) {
+    router.replace("/dashboard");
+    return null;
+  }
+
   const SignupSchema = Yup.object().shape({
     firstName: Yup.string()
       .min(2, "Too Short!")
@@ -45,7 +56,7 @@ const RegisterForm = () => {
         <h2>Sign Up</h2>
         <p>Create a new account</p>
         <div className="signup-btn-group">
-          <button>
+        <button onClick={() => signIn()}>
             <GoogleIcon />
             Sign in With Google
           </button>
